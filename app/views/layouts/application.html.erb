@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+
+    <% flash.each do |name,msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

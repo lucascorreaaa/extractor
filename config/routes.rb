@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'auth/facebook/callback', to: 'home#index'
+  get 'auth/failure', to: redirect('/')
+
+# MUDAR DE get PARA "GET" !!!!!
+
+  get 'home/index'
+
+  root 'home#index'
 end

@@ -10,9 +10,10 @@
 
   <body>
     <% if current_user %>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <%= link_to "Sair", signout_path, id: "sign_out" %>
+      <h2>Olá <%= current_user.name %>, você está logado!</h2>
     <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <%= link_to "Entre com sua conta do Facebook", "/auth/facebook", id: "sign_in" %>
     <% end %>
 
     <% flash.each do |name,msg| %>

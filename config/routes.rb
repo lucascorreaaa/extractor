@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'auth/facebook/callback', to: 'home#index'
+  get 'auth/facebook/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
-
-# MUDAR DE get PARA "GET" !!!!!
-
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'home/index'
 
   root 'home#index'

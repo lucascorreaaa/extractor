@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
       user.gender = auth.info.gender
       user.age = auth.info.age_range
       user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at.to_i)
       user.save!
     end
   end

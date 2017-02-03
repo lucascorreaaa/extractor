@@ -1,3 +1,15 @@
-<h1> Página onde os relatórios serão extraídos! </h1>
+<h2>Relatório de Páginas</h2>
+<font size="4pt">Selecione uma página:</font>
+<br>
+<%= form_tag(home_page_report_path, method: :post) do %>
+  <%= select_tag(:page_id, options_for_select(
+    [
+      ['Microsoft Developer', 509293502425881],
+      ['Microsoft IT Pro', 159159920832702]
+    ], 1))
+  %>
+  <br><br>
+  <%= submit_tag("Gerar Relatório") %>
+<% end %>
 
-<%= button_to "Clique Aqui", home_page_report_path, action: :post %>
+<!-- <%= button_to "Gerar Relatório", home_page_report_path(page_id: @teste), action: :post %>

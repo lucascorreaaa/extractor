@@ -5,6 +5,6 @@ class HomeController < ApplicationController
 
   def page_report
     @page_id = params[:page_id]
-    @json = current_user.facebook.get_connection("509293502425881", "?fields=fan_count")
+    @json = current_user.facebook.get_connection(@page_id, "?fields=fan_count,name")
   end
 end

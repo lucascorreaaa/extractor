@@ -1,3 +1,15 @@
-<%= @json %>
-<br>
-<%= @page_id %>
+
+<font size="4pt" style="font-weight: bold">
+  Nome da Página:
+</font>
+<%= @json["name"] %><br>
+
+<font size="4pt" style="font-weight: bold">
+  ID:
+</font>
+<%= @json["id"] %><br>
+
+<font size="4pt" style="font-weight: bold">
+  Número de Curtidas:
+</font>
+<%= @json["fan_count"] %><br>
